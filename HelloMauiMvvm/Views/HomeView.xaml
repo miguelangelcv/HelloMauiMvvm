@@ -71,8 +71,16 @@
                 FontSize="Caption"
                 FontAttributes="Bold"
                 Margin="4,0"/>
-            <Entry
+
+            <Grid ColumnDefinitions="*,Auto">
+                <Entry
+                    Grid.Column="0"
                     Text="{Binding FirstName}"/>
+                <Button
+                    Grid.Column="1"
+                    Text="Random"
+                    Command="{Binding RandomNameCommand}"/>
+            </Grid>
 
             <Label 
                 Text="Last Name"
@@ -80,9 +88,9 @@
                 FontSize="Caption"
                 FontAttributes="Bold"
                 Margin="4,16,0,0"/>
+
             <Entry
                 Text="{Binding LastName}"/>
-
         </StackLayout>
     </Grid>
 </ContentPage>

@@ -1,4 +1,6 @@
-﻿namespace HelloMauiMvvm;
+﻿using HelloMauiMvvm.Services;
+
+namespace HelloMauiMvvm;
 
 public static class MauiProgram
 {
@@ -12,6 +14,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+		DependencyService.Register<ISampleService, SampleService>();
 
 		return builder.Build();
 	}
