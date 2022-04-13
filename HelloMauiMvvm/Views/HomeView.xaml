@@ -8,43 +8,81 @@
     <ContentPage.BindingContext>
         <vms:HomeViewModel/>
     </ContentPage.BindingContext>
-        
-    <ScrollView>
-        <VerticalStackLayout Spacing="25" Padding="30">
-            
-            <Label 
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
 
+    <Grid 
+        RowDefinitions="*,*,*"
+        Padding="16">
+
+        <Grid
+            Grid.Row="0"
+            ColumnDefinitions="0.3*,*">
+
+            <Image
+                Grid.Column="0"
+                Source="dotnet_bot.png"
+                MaximumHeightRequest="192"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"/>
+
+            <Label
+                Grid.Column="1"
+                Text="{Binding FullName, StringFormat='Hello, {0}!'}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                FontSize="32"/>
+
+        </Grid>
+
+        <StackLayout
+            Grid.Row="1"
+            VerticalOptions="Center">
             <Label 
                 Text="Welcome to .NET Multi-platform App UI"
                 SemanticProperties.HeadingLevel="Level1"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
+                Padding="4"
                 HorizontalOptions="Center" />
 
             <Label
                 Text="{Binding Count, StringFormat='Current count: {0}'}"
                 FontSize="18"
                 FontAttributes="Bold"
+                Padding="4"
                 HorizontalOptions="Center" />
 
             <Button 
                 Text="Click me"
+                Margin="4"
                 FontAttributes="Bold"
                 Command="{Binding CounterCommand}"
                 SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Center" />
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                WidthRequest="250"
-                HeightRequest="310"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"/>
+        </StackLayout>
             
-        </VerticalStackLayout>
-    </ScrollView>
+        <StackLayout
+                Grid.Row="2"
+                VerticalOptions="Center">
+
+            <Label 
+                Text="First Name"
+                TextColor="DarkGray"
+                FontSize="Caption"
+                FontAttributes="Bold"
+                Margin="4,0"/>
+            <Entry
+                    Text="{Binding FirstName}"/>
+
+            <Label 
+                Text="Last Name"
+                TextColor="DarkGray"
+                FontSize="Caption"
+                FontAttributes="Bold"
+                Margin="4,16,0,0"/>
+            <Entry
+                Text="{Binding LastName}"/>
+
+        </StackLayout>
+    </Grid>
 </ContentPage>

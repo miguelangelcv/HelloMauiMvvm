@@ -6,13 +6,25 @@ namespace HelloMauiMvvm.ViewModels
     public partial class HomeViewModel : ObservableObject
     {
         [ObservableProperty]
-        [AlsoNotifyChangeFor(nameof(CountInfo))]
         int _count;
 
         [ObservableProperty]
-        string _countInfo = "Current count: 0";
+        [AlsoNotifyChangeFor(nameof(FullName))]
+        string _firstName;
+
+        [ObservableProperty]
+        [AlsoNotifyChangeFor(nameof(FullName))]
+        string _lastName;
+
+        public string FullName => $"{FirstName} {LastName}".Trim();
 
         [ICommand]
         void Counter() => Count += 1;
+
+        public HomeViewModel()
+        {
+            FirstName = ".NET";
+            LastName = "Developer";
+        }
     }
 }
