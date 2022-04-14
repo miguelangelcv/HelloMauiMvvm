@@ -4,7 +4,7 @@ using HelloMauiMvvm.Services;
 
 namespace HelloMauiMvvm.ViewModels
 {
-    public partial class HomeViewModel : ObservableObject
+    public partial class HomeViewModel : ViewModelBase
     {
         private readonly ISampleService _sampleService;
 
@@ -23,6 +23,9 @@ namespace HelloMauiMvvm.ViewModels
 
         [ICommand]
         void Counter() => Count += 1;
+
+        [ICommand]
+        void GoToSecond() => NavigationService.Instance.NavigateToAsync<SecondViewModel>(FullName);
 
         [ICommand]
         void RandomName()

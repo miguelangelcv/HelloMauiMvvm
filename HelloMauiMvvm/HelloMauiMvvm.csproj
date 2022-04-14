@@ -50,7 +50,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\SecondView.xaml.cs">
+	    <DependentUpon>SecondView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\HomeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SecondView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

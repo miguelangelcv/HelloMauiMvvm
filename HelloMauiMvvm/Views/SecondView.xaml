@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vms="clr-namespace:HelloMauiMvvm.ViewModels"
+             x:Class="HelloMauiMvvm.Views.SecondView"
+             Title="SecondView">
+
+    <ContentPage.BindingContext>
+        <vms:SecondViewModel/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <Label Text="Parameter"
+               TextColor="DarkGray"
+               FontAttributes="Bold"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+        
+        <Label Text="{Binding Parameter}"
+               Margin="8"
+               VerticalOptions="Center" 
+               FontSize="18"
+               HorizontalOptions="Center"/>
+    </StackLayout>
+</ContentPage>

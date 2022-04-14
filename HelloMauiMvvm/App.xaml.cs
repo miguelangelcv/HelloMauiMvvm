@@ -1,4 +1,6 @@
-﻿namespace HelloMauiMvvm;
+﻿using HelloMauiMvvm.Views;
+
+namespace HelloMauiMvvm;
 
 public partial class App : Application
 {
@@ -6,6 +8,9 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		MainPage = new NavigationPage(new HomeView());
+
+		// .NET MAUI Shell
+		//MainPage = new AppShell();
 	}
 }
