@@ -4,7 +4,7 @@ using HelloMauiMvvm.Views;
 namespace HelloMauiMvvm.Services
 {
     // Source: https://github.com/jsuarezruiz
-    public class NavigationService : INavigationService
+    public class NavigationService
     {
         protected readonly Dictionary<Type, Type> _mappings;
 

@@ -74,12 +74,6 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 HorizontalOptions="Center"/>
 
-            <Button 
-                Text="Go to SecondView"
-                Margin="4"
-                FontAttributes="Bold"
-                Command="{Binding GoToSecondCommand}"
-                HorizontalOptions="Center"/>
         </StackLayout>
             
         <StackLayout
