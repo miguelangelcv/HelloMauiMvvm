@@ -12,22 +12,22 @@ namespace HelloMauiMvvm.ViewModels
         int _count;
 
         [ObservableProperty]
-        [AlsoNotifyChangeFor(nameof(FullName))]
+        [NotifyPropertyChangedFor(nameof(FullName))]
         string _firstName;
 
         [ObservableProperty]
-        [AlsoNotifyChangeFor(nameof(FullName))]
+        [NotifyPropertyChangedFor(nameof(FullName))]
         string _lastName;
 
         public string FullName => $"{FirstName} {LastName}".Trim();
 
-        [ICommand]
+        [RelayCommand]
         void Counter() => Count += 1;
 
-        [ICommand]
+        [RelayCommand]
         void GoToSecond() => NavigationService.Instance.NavigateToAsync<SecondViewModel>(FullName);
 
-        [ICommand]
+        [RelayCommand]
         void RandomName()
         {
             FirstName = _sampleService.GetRandomString();
